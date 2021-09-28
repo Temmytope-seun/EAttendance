@@ -1,0 +1,295 @@
+﻿@model EAttendance.Models.Staff
+
+@{
+    ViewData["Title"] = "Edit";
+}
+@{
+
+    if (ViewBag.User == "Admin")
+    {
+
+
+        <h2>Edit your staff profile</h2>
+
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StaffId" />
+            <input type="hidden" asp-for="UserCreated" />
+            <input type="hidden" asp-for="DateCreated" />
+            <input type="hidden" asp-for="ActiveStaff" />
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="about">
+                        <h5 class="info-text"> Let's start with the basic information about the Staff</h5> <br />
+
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4">
+                                <div class="picture-container">
+                                    <div class="picture">
+                                        <img src="~/assets/imgages/default-avatar.png" id="wizardPicturePreview" title="" />
+                                        <input type="file" id="wizard-picture" asp-for="ImageUrl" class="form-control" required>
+                                        <span asp-validation-for="ImageUrl" class="text-rose"></span>
+                                    </div>
+                                    <h6 class="description text-rose">Upload Photograph</h6>
+
+                                    <p id="demo"></p>
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">First Name  *</label>
+                                    <input class="form-control" id="exampleInput1" asp-for="FirstName" required>
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="exampleInput11" class="bmd-label-floating">Last Name *</label>
+                                    <input class="form-control" id="exampleInput11" asp-for="Surname" required>
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-10 mt-3">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">Other Names  *</label>
+                                    <input class="form-control" id="exampleInput1" asp-for="Othernames" required>
+                                    <span asp-validation-for="Othernames" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-10 mt-3">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">Email *</label>
+                                    <input class="form-control" id="exampleemalil" asp-for="Email" required>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-10 mt-3">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">Phone  *</label>
+                                    <input class="form-control" id="exampleInput1" asp-for="PhoneNo" required>
+                                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-10 mt-3">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">Staff ID  *</label>
+                                    <input class="form-control" id="exampleInput1" asp-for="StaffNo" required>
+                                    <span asp-validation-for="StaffNo" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <h5 class="info-text"> Fill Out All Forms Correctly </h5>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 mt-3">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-6">
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInput1" class="bmd-label-floating">Gender *</label>
+                                        @*<input type="text" class="form-control" id="exampleInput1" asp-for="Sex" required>*@
+                                        <select asp-for="Sex" class="custom-select custom-select-sm mb-3" required>
+                                            <option selected>Please Select</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+
+                                        </select>
+                                        <span asp-validation-for="Sex" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInput1" class="bmd-label-floating">Qualification</label>
+                                        <input class="form-control" id="exampleInput1" asp-for="Qualification">
+                                        <span asp-validation-for="Qualification" class="text-danger"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+                                        <label for="exampleInput1" class="bmd-label-floating">Department  *</label>
+                                        <input class="form-control" id="exampleInput1" asp-for="Department" required>
+                                        <span asp-validation-for="Department" class="text-danger"></span>
+                                    </div>
+
+                                    
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+
+
+        <div>
+            <a asp-action="Index" class="btn btn-info">Back to List</a>
+        </div>
+    }
+    else
+    {
+        <h2>Edit your Profile</h2>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StaffId" />
+            <input type="hidden" asp-for="UserCreated" />
+            <input type="hidden" asp-for="DateCreated" />
+            <input type="hidden" asp-for="StaffNo" />
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="about">
+                        <h5 class="info-text"> Let's start with the basic information about the Staff</h5> <br />
+
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4">
+                                <div class="picture-container">
+                                    <div class="picture">
+                                        <img src="~/assets/imgages/default-avatar.png" id="wizardPicturePreview" title="" />
+                                        <input type="file" id="wizard-picture" asp-for="ImageUrl" class="form-control" required>
+                                        <span asp-validation-for="ImageUrl" class="text-rose"></span>
+                                    </div>
+                                    <h6 class="description text-rose">Upload Photograph</h6>
+
+                                    <p id="demo"></p>
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">First Name  *</label>
+                                    <input class="form-control" id="exampleInput1" asp-for="FirstName" required>
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="exampleInput11" class="bmd-label-floating">Last Name *</label>
+                                    <input class="form-control" id="exampleInput11" asp-for="Surname" required>
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-10 mt-3">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">Other Names  *</label>
+                                    <input class="form-control" id="exampleInput1" asp-for="Othernames" >
+                                    <span asp-validation-for="Othernames" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-10 mt-3">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">Email *</label>
+                                    <input class="form-control" id="exampleemalil" asp-for="Email" required>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-10 mt-3">
+
+                                <div class="form-group">
+                                    <label for="exampleInput1" class="bmd-label-floating">Phone  *</label>
+                                    <input class="form-control" id="exampleInput1" asp-for="PhoneNo" required>
+                                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <h5 class="info-text"> Fill Out All Forms Correctly </h5>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 mt-3">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-6">
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInput1" class="bmd-label-floating">Gender *</label>
+                                        @*<input type="text" class="form-control" id="exampleInput1" asp-for="Sex" required>*@
+                                        <select asp-for="Sex" class="custom-select custom-select-sm mb-3" required>
+                                            <option selected>Please Select</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+
+                                        </select>
+                                        <span asp-validation-for="Sex" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInput1" class="bmd-label-floating">Qualification</label>
+                                        <input class="form-control" id="exampleInput1" asp-for="Qualification">
+                                        <span asp-validation-for="Qualification" class="text-danger"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+                                        <label for="exampleInput1" class="bmd-label-floating">Department  *</label>
+                                        <input class="form-control" id="exampleInput1" asp-for="Department" required>
+                                        <span asp-validation-for="Department" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInput1" class="bmd-label-floating">StaffNo  *</label>
+                                        <input class="form-control" id="exampleInput1" asp-for="StaffNo" required>
+                                        <span asp-validation-for="StaffNo" class="text-danger"></span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-info" />
+            </div>
+        </form>
+    
+    }
+
+}
+<script>
+    function myFunction() {
+        alert("Please ensure you upload a Full Photograph")
+    }
+</script>

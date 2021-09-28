@@ -1,0 +1,506 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+
+
+animate {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 6s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+.threedtext {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: #afe222 1px 1px, #000 2px 2px, #000 3px 3px;
+    position: relative;
+    -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+.threedtext:hover {
+    color: #FFF;
+text-shadow: #afe222 1px 1px, #afe222 2px 2px, #afe222 3px 3px, #B7BDC8 4px 4px,
+#B7BDC8 5px 5px, #B7BDC8 6px 6px;
+    left: -6px;
+    top: -6px;
+}
+
+  
+   
+
+    .pic1 {
+        margin-top:20px;
+        width: auto;
+        height: auto;
+        
+    }
+
+     .pic2 {
+        margin-right:30px;
+        float:right;
+        width: auto;
+        height: auto;
+       
+    }
+     .pic3 {
+         margin-right:auto;
+         margin-left:auto;
+        width: auto;
+        height: auto;
+        padding:0;
+       
+    }
+
+    #meta {
+        height: 1px;
+        width: 1150px;
+        background-color: orange;
+        margin-left: auto;
+        margin-right: auto;
+    }
+     #header {
+            width: auto;
+            height: auto;
+            background-color: rebeccapurple;
+        }
+      /*.nav-left {
+        margin:auto;
+        height: 500px;
+        width: 200px;
+        background-color:purple;
+    }*/
+
+    .place {
+    float:right;
+    width:auto;
+    height: auto;
+    margin:auto;
+    
+    }
+    .cont {
+       
+        width: auto;
+        height: auto;
+        background-color: #ffffff;
+
+    }
+
+    #logo {
+        margin-top: 10px;
+        float: initial;
+        width: 70px;
+        height: 70px;
+        background-image: url(C:/Users/Adedamola.Adepoju/Pictures/FCMB_Logo.png);
+    }
+
+
+    #text {
+        margin: 10px;
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+
+    
+    #pix {
+        margin:auto;
+        height: auto;
+        width: auto;
+    }
+
+    .section.left {
+        height: 200px;
+        width: 300px;
+        background-color: orange;
+        padding: 0;
+    }
+
+    #left {
+        float:right;
+    }
+
+    .section.right {
+        height: 250px;
+        width: 700px;
+        background-image: url('../../Images/slide_2.jpg');
+       margin-top:100px;
+       margin-right:10px;
+        float:right;
+        
+    }
+
+    #scroller {
+        position: relative;
+    }
+    #scroller .innerScrollArea {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    #scroller ul {
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+    #scroller li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        position: absolute;
+    }
+    
+  /* Style The Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: white}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+ hold {
+        position:fixed;
+        width: 100%;
+        height: auto; 
+        margin-top: 48px;
+        padding: 0;
+        top:0;
+
+    }
+ .navig{
+     background-color:orange;
+      }
+.menu {
+    background-color: white;
+}
+.topnav-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.topnav-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.topnav-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+@media (min-width: 768px) {
+  .topnav-toggle {
+    display: none;
+  }
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:auto;
+    background-color:transparent;
+}
+ul {
+  
+    top: 0;
+    width: 100%;
+}
+ul.topnav li {float:left;}
+
+.active{
+    background-color: grey;
+}
+ul.topnav li a {
+    display:inline-block;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+     
+}
+
+ul.topnav li a:hover:not(.active) {
+    color: white;
+    background-color:orange;
+
+}
+
+    ul.topnav li a:hover.visited {
+        color: white;
+        background-color: orange;
+        
+    }
+
+ul.topnav li.left {float: left;}
+
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+/*@media screen and (max-width: 600px) {
+    ul.topnav li.right,
+    ul.topnav li {
+        float: none;
+    }
+}*/
+ .sidenav {
+      padding-top: 20px;
+      background-color:white;
+      height: 100%;
+    }
+ @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+
+ .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+    .vcard {
+        box-shadow: 8px 12px 16px 8px rgba(0, 0, 0, 0.2);
+        max-width: 1200px;
+        height: auto;
+        margin: auto;
+        padding:5px;
+       background-repeat:no-repeat;
+       padding:30px;
+    }
+
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    
+    min-height: 700px;
+    background-repeat: no-repeat;
+   
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  
+    min-height: 400px;
+     background-repeat: no-repeat;
+    
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    
+    min-height: 700px;
+    background-repeat: no-repeat;
+  
+}
+
+.bt-wide {letter-spacing: 10px;}
+.bt-hover-opacity {cursor: pointer;}
+
+
+
+/* Position text in the middle */
+.middle {
+  
+    text-align: center;
+}
+
+.navbar-inverse {
+  background-color: white;
+  border-color:black;
+}    
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+/* Style the list */
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+/* List items */
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change the width of the three columns to 100% 
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+

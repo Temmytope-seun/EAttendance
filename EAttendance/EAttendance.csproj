@@ -1,0 +1,114 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\node_modules\chartist\dist\chartist.min.css" />
+    <Content Include="wwwroot\node_modules\codemirror\lib\codemirror.css" />
+    <Content Include="wwwroot\node_modules\codemirror\theme\blackboard.css" />
+    <Content Include="wwwroot\node_modules\datatables.net-bs4\css\dataTables.bootstrap4.css" />
+    <Content Include="wwwroot\node_modules\dropzone\dist\min\dropzone.min.css" />
+    <Content Include="wwwroot\node_modules\flag-icon-css\css\flag-icon.min.css" />
+    <Content Include="wwwroot\node_modules\jquery-circle-progress\dist\circle-progress.min.html" />
+    <Content Include="wwwroot\node_modules\owl.carousel\dist\assets\owl.carousel.min.css" />
+    <Content Include="wwwroot\node_modules\owl.carousel\dist\assets\owl.video.play.png" />
+    <Content Include="wwwroot\node_modules\perfect-scrollbar\css\perfect-scrollbar.css" />
+    <Content Include="wwwroot\node_modules\spectrum-colorpicker\spectrum.css" />
+    <Content Include="wwwroot\node_modules\summernote\dist\font\summernote64fe-2.html" />
+    <Content Include="wwwroot\node_modules\summernote\dist\font\summernote64fe.eot" />
+    <Content Include="wwwroot\node_modules\summernote\dist\font\summernote64fe.html" />
+    <Content Include="wwwroot\node_modules\summernote\dist\summernote-bs4.css" />
+    <Content Include="wwwroot\node_modules\tempusdominus-bootstrap-4\build\css\tempusdominus-bootstrap-4.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\node_modules\amcharts3\amcharts\amcharts.js" />
+    <None Include="wwwroot\node_modules\amcharts3\amcharts\gauge.js" />
+    <None Include="wwwroot\node_modules\amcharts3\amcharts\pie.js" />
+    <None Include="wwwroot\node_modules\amcharts3\amcharts\plugins\animate\animate.min.js" />
+    <None Include="wwwroot\node_modules\amcharts3\amcharts\plugins\responsive\responsive.min.js" />
+    <None Include="wwwroot\node_modules\amcharts3\amcharts\serial.js" />
+    <None Include="wwwroot\node_modules\amcharts3\amcharts\themes\light.js" />
+    <None Include="wwwroot\node_modules\ammap3\ammap\ammap.js" />
+    <None Include="wwwroot\node_modules\ammap3\ammap\maps\js\continentsLow.js" />
+    <None Include="wwwroot\node_modules\ammap3\ammap\maps\js\worldLow.js" />
+    <None Include="wwwroot\node_modules\ammap3\ammap\themes\light.js" />
+    <None Include="wwwroot\node_modules\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\node_modules\chart.js\dist\Chart.min.js" />
+    <None Include="wwwroot\node_modules\chartist\dist\chartist.min.js" />
+    <None Include="wwwroot\node_modules\codemirror\lib\codemirror.js" />
+    <None Include="wwwroot\node_modules\codemirror\mode\javascript\javascript.js" />
+    <None Include="wwwroot\node_modules\d3\d3.min.js" />
+    <None Include="wwwroot\node_modules\datamaps\dist\datamaps.all.min.js" />
+    <None Include="wwwroot\node_modules\datatables.net-bs4\js\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\node_modules\datatables.net\js\jquery.dataTables.js" />
+    <None Include="wwwroot\node_modules\dropzone\dist\min\dropzone.min.js" />
+    <None Include="wwwroot\node_modules\echarts-liquidfill\dist\echarts-liquidfill.min.js" />
+    <None Include="wwwroot\node_modules\echarts\dist\echarts.min.js" />
+    <None Include="wwwroot\node_modules\gmaps\gmaps.min.js" />
+    <None Include="wwwroot\node_modules\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\node_modules\masonry-layout\dist\masonry.pkgd.min.js" />
+    <None Include="wwwroot\node_modules\moment\min\locales.min.js" />
+    <None Include="wwwroot\node_modules\moment\min\moment.min.js" />
+    <None Include="wwwroot\node_modules\moment\moment.js" />
+    <None Include="wwwroot\node_modules\owl.carousel\dist\owl.carousel.min.js" />
+    <None Include="wwwroot\node_modules\patternomaly\dist\patternomaly.js" />
+    <None Include="wwwroot\node_modules\perfect-scrollbar\dist\perfect-scrollbar.min.js" />
+    <None Include="wwwroot\node_modules\spectrum-colorpicker\spectrum.js" />
+    <None Include="wwwroot\node_modules\summernote\dist\summernote-bs4.js" />
+    <None Include="wwwroot\node_modules\sweetalert2\dist\sweetalert2.js" />
+    <None Include="wwwroot\node_modules\tempusdominus-bootstrap-4\build\js\tempusdominus-bootstrap-4.min.js" />
+    <None Include="wwwroot\node_modules\topojson\build\topojson.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="EPPlus" Version="4.5.3.2" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.22" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+  
+</Project>

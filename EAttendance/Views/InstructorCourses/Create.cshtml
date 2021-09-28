@@ -1,0 +1,36 @@
+﻿@model EAttendance.Models.InstructorCourse
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Assign Staff to Subjects</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StaffId" class="control-label"></label>
+                <select asp-for="StaffId" class ="form-control" asp-items="ViewBag.StaffId">
+                    <option selected>Please Select Staff</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseId" class="control-label"></label>
+                <select asp-for="CourseId" class ="form-control" asp-items="ViewBag.SubjectId">
+                    <option selected>Please Select Subject</option>
+                </select>
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Assign" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-warning" >Back to List</a>
+</div>
+

@@ -1,0 +1,97 @@
+﻿@model EAttendance.Models.RegisterViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Register";
+
+}
+<h2>Institution Admin Profile.</h2>
+
+<form asp-action="Register" method="post">
+    <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="card-body">
+        <div class="tab-content">
+            <div class="tab-pane active" id="about">
+                <h5 class="info-text"> Let's start with the basic information (With Prefered Login)</h5>
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="SchoolName" class="bmd-label-floating">Select Institution </label>
+                            <select asp-for="SchoolName" asp-items="@ViewBag.SchoolName" class="custom-select">
+                                <option selected>Select School...</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="FirstName" class="bmd-label-floating"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="LastName" class="bmd-label-floating"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="bmd-label-floating"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="bmd-label-floating"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="Password" class="bmd-label-floating"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword" class="bmd-label-floating"></label>
+                            <input asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer">
+
+        <div class="ml-auto">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+
+    </div>
+</form>
+

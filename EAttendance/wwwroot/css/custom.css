@@ -1,0 +1,271 @@
+﻿.instruction-container {
+    background-color: snow;
+    width: 1150px;
+    position: center;
+    display: block;
+    border: 1px solid #5776bf;
+    box-shadow: 0px 0px 2px #dadada, inset 0px -3px 0px #e6e6e6;
+}
+.registration-container {
+    background-color: snow;
+    width: 1150px;
+    position: center;
+    display: block;
+    border: 1px solid #5776bf;
+    box-shadow: 0px 0px 2px #dadada, inset 0px -3px 0px #e6e6e6;
+}
+.padd {
+    padding-top: 20px;
+    padding-left: 30px;
+}
+.cust {
+    margin: 20px;
+}
+
+    .cust field {
+        margin-bottom: 1.25em;
+    }
+.sub-head{
+    font-size: 14px;
+    font-weight: bold;
+    color: blue;
+}
+
+.instructions-note{
+    color: black;
+    font-family: sans-serif;
+}
+.notice{
+    color:red;
+}
+
+.column-1 {
+    float: left;
+    position: relative;
+    /*min-height: 1px;
+    padding-right: 250px;
+    padding-left: 50px;*/
+    width: 50%;
+}
+
+.sbmt-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 1160px !important;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.sbmtprev-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 550px !important;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 45px;
+    float: left;
+    position: relative;
+}
+
+#summary {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-left:50px;
+}
+
+    #summary td, #customers th {
+        border: 0px solid #ddd;
+    }
+
+    /*#summary tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #summary tr:hover {
+        background-color: #ddd;
+    }*/
+
+    #summary th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        /*background-color: #4CAF50;*/
+        color: black;
+    }
+
+
+
+.addolevel-btn {
+    background-color: #4CAF50 !important;
+    border: none !important;
+    color: white !important;
+    width: 200px !important;
+    padding: 15px 32px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    margin-top: 20px !important;
+    margin-left: 45px !important;
+    float: left !important;
+    position: relative !important;
+}
+
+
+
+fileinput {
+    display: inline-block;
+    margin-bottom: 9px
+}
+
+.fileinput .form-control {
+    display: inline-block;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: text
+}
+
+.fileinput .thumbnail {
+    display: inline-block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 250px;
+    box-shadow: 0 10px 30px -12px rgba(0,0,0,.42),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)
+}
+
+    .fileinput .thumbnail.img-circle {
+        border-radius: 50%;
+        max-width: 100px
+    }
+
+    .fileinput .thumbnail > img {
+        max-height: 100%;
+        width: 100%
+    }
+
+.fileinput .btn {
+    vertical-align: middle
+}
+
+.fileinput-exists .fileinput-new, .fileinput-new .fileinput-exists {
+    display: none
+}
+
+.fileinput-inline .fileinput-controls {
+    display: inline
+}
+
+.fileinput-filename {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle
+}
+
+.form-control .fileinput-filename {
+    vertical-align: bottom
+}
+
+.fileinput.input-group {
+    display: table
+}
+
+    .fileinput.input-group > * {
+        position: relative;
+        z-index: 2
+    }
+
+    .fileinput.input-group > .btn-file {
+        z-index: 1
+    }
+
+.fileinput-new.input-group .btn-file, .fileinput-new .input-group .btn-file {
+    border-radius: 0 4px 4px 0
+}
+
+    .fileinput-new.input-group .btn-file.btn-sm, .fileinput-new .input-group .btn-file.btn-sm, .fileinput-new.input-group .btn-file.btn-xs, .fileinput-new .input-group .btn-file.btn-xs, .fileinput-new.input-group .btn-group-sm > .btn-file.btn, .fileinput-new .input-group .btn-group-sm > .btn-file.btn {
+        border-radius: 0 3px 3px 0
+    }
+
+    .fileinput-new.input-group .btn-file.btn-lg, .fileinput-new .input-group .btn-file.btn-lg, .fileinput-new.input-group .btn-group-lg > .btn-file.btn, .fileinput-new .input-group .btn-group-lg > .btn-file.btn {
+        border-radius: 0 6px 6px 0
+    }
+
+.form-group.has-warning .fileinput .fileinput-preview {
+    color: #ff9800
+}
+
+.form-group.has-warning .fileinput .thumbnail {
+    border-color: #ff9800
+}
+
+.form-group.has-error .fileinput .fileinput-preview {
+    color: #f44336
+}
+
+.form-group.has-error .fileinput .thumbnail {
+    border-color: #f44336
+}
+
+.form-group.has-success .fileinput .fileinput-preview {
+    color: #4caf50
+}
+
+.form-group.has-success .fileinput .thumbnail {
+    border-color: #4caf50
+}
+
+.input-group-addon:not(:first-child) {
+    border-left: 0
+}
+/*.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;*/
+
+
+    span {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.print {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.print td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.print tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.footer-note {
+    margin-top: 100px;
+    position: fixed;
+    bottom: 0;
+}
+

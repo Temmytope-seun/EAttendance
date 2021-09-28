@@ -1,0 +1,70 @@
+﻿@model IEnumerable<EAttendance.Models.InstructorCourse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Staff Assignments</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<hr />
+<div class="table-responsive">
+    <table id="data-table" class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staff)
+                </th>
+                <th>
+                   Course
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateCreated)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserCreated)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateModified)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserModified)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Staff.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Course.CourseTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateCreated)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserCreated)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateModified)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserModified)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.InstructorCourseId">Edit</a> |
+                        <form asp-action="DeleteConfirmed" asp-route-id="@item.InstructorCourseId" method="post">
+
+            <button type="submit" onclick="return confirm('Are you sure you want to remove this record?')" title="Delete"><i class="material-icons">delete</i></button>
+        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

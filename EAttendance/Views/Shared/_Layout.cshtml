@@ -1,0 +1,712 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="God,Jesus,Holyspirit,InfoBrain,Code Arena,InfoBrain Technologies,Technologies,Robotics,Web application,Automation,Edupool,School Automation,Digital Education,E-learning,Education,Portfolio,Automating School Processes" />
+    <meta name="description" content="Code Arena is a platform that gives you an opportunity to become a solution provider by developing computer, mobile and web based solutions." />
+    <!-- /meta tags -->
+    <title>@ViewBag.Title | EAttendance</title>
+    <link href="~/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" />
+
+    <link rel="stylesheet" href="~/css/Datatables.css" />
+    <link rel="stylesheet" href="~/css/DatatablesButtons.css" />
+    <link rel="stylesheet" href="~/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="~/css/datatables.min.css" />
+    <link rel="stylesheet" href="~/css/material-icons.css" />
+    @*<link rel="stylesheet" href="~/css/FontAwesome.css" />
+        <link rel="stylesheet" href="~/assets/css/material-dashboard.min790f.css" />*@
+
+    <link rel="stylesheet" href="~/css/Datatables.css" />
+    <link rel="stylesheet" href="~/css/DatatablesButtons.css" />
+    <!-- Site favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/fav5.png">
+    <!-- /site favicon -->
+    <!-- Font Icon Styles -->
+    <link rel="stylesheet" href="~/node_modules/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/vendors/gaxon-icon/styles.css">
+    <!-- /font icon Styles -->
+    <!-- Perfect Scrollbar stylesheet -->
+    <link rel="stylesheet" href="~/node_modules/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link href="~/assets/libs/summernote/summernote-bs4.css" rel="stylesheet" type="text/css" />
+
+    <!-- Load Styles -->
+    <link href="~/node_modules/summernote/dist/summernote-bs4.css" rel="stylesheet">
+    <link href="~/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- /perfect scrollbar stylesheet -->
+    <!-- Load Styles -->
+    <link rel="stylesheet" href="~/assets/css/semidark-style-1.min.css">
+    <!-- /load styles -->
+
+</head>
+<body onload="myFunction()" class="dt-sidebar--fixed dt-header--fixed">
+
+    <!-- Loader -->
+    <div class="dt-loader-container">
+        <div class="dt-loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
+    </div>
+    <!-- /loader -->
+    <!-- Root -->
+    @{
+
+
+        if (User.IsInRole("Staff"))
+        {
+            <div class="dt-root">
+                <div class="dt-root__inner">
+                    <!-- Header -->
+                    <header class="dt-header">
+
+                        <!-- Header container -->
+                        <div class="dt-header__container">
+
+                            <!-- Brand -->
+                            <div class="dt-brand">
+
+                                <!-- Brand tool -->
+                                <div class="dt-brand__tool" data-toggle="main-sidebar">
+                                    <div class="hamburger-inner"></div>
+                                </div>
+                                <!-- /brand tool -->
+                                <!-- Brand logo -->
+                                <span class="dt-brand__logo">
+                                        <a class="dt-brand__logo-link" href="@Url.Action("StaffDashboards","Dashboard")">
+                                            <b style="color:white; font-size: 20px"> EAttendance</b>
+
+                                        </a>
+                                </span>
+                                <!-- /brand logo -->
+
+                            </div>
+                            <!-- /brand -->
+                            <!-- Header toolbar-->
+                            <div class="dt-header__toolbar">
+
+
+                                <!-- /search box -->
+                                <!-- Header Menu Wrapper -->
+                                <div class="dt-nav-wrapper">
+                                    <!-- Header Menu -->
+
+
+                                    <ul class="dt-nav">
+                                        <li class="dt-nav__item dropdown">
+
+                                            <!-- Dropdown Link -->
+                                            <a href="#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper"
+                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img class="dt-avatar" src="~/images/default.png">
+                                                <span class="dt-avatar-info d-none d-sm-block">
+                                                    <span class="dt-avatar-name">@User.Identity.Name</span>
+                                                </span>
+                                            </a>
+                                            <!-- /dropdown link -->
+                                            <!-- Dropdown Option -->
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <div class="dt-avatar-wrapper flex-nowrap p-6 mt-n2 bg-gradient-purple text-white rounded-top">
+                                                    <img class="dt-avatar" src="~/images/default.png">
+                                                    <span class="dt-avatar-info">
+                                                        <span class="dt-avatar-name">@User.Identity.Name</span>
+                                                        <span class="f-12">Staff</span>
+                                                    </span>
+                                                </div>
+                                                 
+                                                <a class="nav-link" asp-action="logout" asp-controller="Account">
+                                                    <i class="icon icon-editors icon-fw mr-2 mr-sm-1"></i>Logout
+                                                </a>
+
+
+                                            </div>
+                                            <!-- /dropdown option -->
+
+                                        </li>
+                                    </ul>
+                                    <!-- /header menu -->
+                                </div>
+                                <!-- Header Menu Wrapper -->
+
+                            </div>
+                            <!-- /header toolbar -->
+
+                        </div>
+                        <!-- /header container -->
+
+                    </header>
+                    <!-- /header -->
+                    <!-- Site Main -->
+                    <main class="dt-main">
+                        <!-- Sidebar -->
+                        <aside id="main-sidebar" class="dt-sidebar">
+                            <div class="dt-sidebar__container">
+
+                                <!-- Sidebar Navigation -->
+                                <ul class="dt-side-nav">
+
+                                    <!-- Menu Header -->
+                                    <li class="dt-side-nav__item dt-side-nav__header">
+                                        <span class="dt-side-nav__text">main</span>
+                                    </li>
+                                    <!-- /menu header -->
+                                    <!-- Menu Item -->
+                                    <li class="dt-side-nav__item open">
+                                        <a href="@Url.Action("StaffDashboards","Dashboard")" class="dt-side-nav__link dt-side-nav__arrow" title="Dashboard">
+                                            <i class="icon icon-dashboard icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Dashboard</span>
+                                        </a>
+
+
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Create","Students")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Create Student</span>
+                                        </a>
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Index","InstructorCourses")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">View Assigned Courses</span>
+                                        </a>
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Index","Attendance")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">View Attendances</span>
+                                        </a>
+                                    </li>
+
+
+
+                                </ul>
+                                <!-- /sidebar navigation -->
+
+                            </div>
+                        </aside>
+                        <!-- /sidebar -->
+                        <!-- Site Content Wrapper -->
+                        <div class="dt-content-wrapper">
+
+                            <!-- Site Content -->
+                            <div class="dt-content">
+                                <div class="dt-card">
+                                    <div class="dt-card__body">
+                                        @RenderBody()<!-- /grid -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /site content -->
+                            <!-- Footer -->
+                            <footer class="dt-footer">
+                                Copyright Edupool © 2019. Developed by <a href="http://www.infobrain.com.ng" target="_blank">InfoBrain Technologies</a>
+                            </footer>
+                            <!-- /footer -->
+                        </div>
+                        <!-- /site content wrapper -->
+                        <!-- Theme Chooser -->
+                        <div class="dt-customizer-toggle">
+                            <a href="javascript:void(0)" data-toggle="customizer"> <i class="icon icon-customizer animation-customizer"></i> </a>
+                        </div>
+                        <!-- /theme chooser -->
+                        <!-- Customizer Sidebar -->
+                        <aside class="dt-customizer dt-drawer position-right">
+                            <div class="dt-customizer__inner">
+
+                                <!-- Customizer Header -->
+                                <div class="dt-customizer__header">
+
+                                    <!-- Customizer Title -->
+                                    <div class="dt-customizer__title">
+                                        <h3 class="mb-0">Theme Settings</h3>
+                                    </div>
+                                    <!-- /customizer title -->
+                                    <!-- Close Button -->
+                                    <button type="button" class="close" data-toggle="customizer">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <!-- /close button -->
+
+                                </div>
+                                <!-- /customizer header -->
+                                <!-- Customizer Body -->
+                              
+                                <!-- /customizer body -->
+
+                            </div>
+                        </aside>
+                        <!-- /customizer sidebar -->
+                    </main>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("Student"))
+        {
+            <div class="dt-root">
+                <div class="dt-root__inner">
+                    <!-- Header -->
+                    <header class="dt-header">
+
+                        <!-- Header container -->
+                        <div class="dt-header__container">
+
+                            <!-- Brand -->
+                            <div class="dt-brand">
+
+                                <!-- Brand tool -->
+                                <div class="dt-brand__tool" data-toggle="main-sidebar">
+                                    <div class="hamburger-inner"></div>
+                                </div>
+                                <!-- /brand tool -->
+                                <!-- Brand logo -->
+                                <span class="dt-brand__logo">
+                                    <a class="dt-brand__logo-link" href="@Url.Action("StudentDashboard","Dashboard")">
+                                       <b style="color:white; font-size: 20px"> EAttendance</b>
+
+                                    </a>
+                                </span>
+                                <!-- /brand logo -->
+
+                            </div>
+                            <!-- /brand -->
+                            <!-- Header toolbar-->
+                            <div class="dt-header__toolbar">
+
+
+                                <!-- /search box -->
+                                <!-- Header Menu Wrapper -->
+                                <div class="dt-nav-wrapper">
+                                    <!-- Header Menu -->
+
+
+                                    <ul class="dt-nav">
+                                        <li class="dt-nav__item dropdown">
+
+                                            <!-- Dropdown Link -->
+                                            <a href="#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper"
+                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img class="dt-avatar" src="~/images/default.png">
+                                                <span class="dt-avatar-info d-none d-sm-block">
+                                                    <span class="dt-avatar-name">@User.Identity.Name</span>
+                                                </span>
+                                            </a>
+                                            <!-- /dropdown link -->
+                                            <!-- Dropdown Option -->
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <div class="dt-avatar-wrapper flex-nowrap p-6 mt-n2 bg-gradient-purple text-white rounded-top">
+                                                     <img class="dt-avatar" src="~/images/default.png">
+                                                    <span class="dt-avatar-info">
+                                                        <span class="dt-avatar-name">@User.Identity.Name</span>
+                                                        <span class="f-12">Student</span>
+                                                    </span>
+                                                </div>
+                                                
+                                                <a class="nav-link" asp-action="logout" asp-controller="Account">
+                                                    <i class="icon icon-editors icon-fw mr-2 mr-sm-1"></i>Logout
+                                                </a>
+
+                                            </div>
+                                            <!-- /dropdown option -->
+
+                                        </li>
+                                    </ul>
+                                    <!-- /header menu -->
+                                </div>
+                                <!-- Header Menu Wrapper -->
+
+                            </div>
+                            <!-- /header toolbar -->
+
+                        </div>
+                        <!-- /header container -->
+
+                    </header>
+                    <!-- /header -->
+                    <!-- Site Main -->
+                    <main class="dt-main">
+                        <!-- Sidebar -->
+                        <aside id="main-sidebar" class="dt-sidebar">
+                            <div class="dt-sidebar__container">
+
+                                <!-- Sidebar Navigation -->
+                                <ul class="dt-side-nav">
+
+                                    <!-- Menu Header -->
+                                    <li class="dt-side-nav__item dt-side-nav__header">
+                                        <span class="dt-side-nav__text">main</span>
+                                    </li>
+                                    <!-- /menu header -->
+                                    <!-- Menu Item -->
+                                    <li class="dt-side-nav__item open">
+                                        <a href="@Url.Action("StudentDashboard","Dashboard")" class="dt-side-nav__link dt-side-nav__arrow" title="Dashboard">
+                                            <i class="icon icon-dashboard icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Dashboard</span>
+                                        </a>
+
+                                        <!-- Sub-menu -->
+
+                                    </li>
+
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Index","Attendance")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">View Attendances</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- /sidebar navigation -->
+
+                            </div>
+                        </aside>
+                        <!-- /sidebar -->
+                        <!-- Site Content Wrapper -->
+                        <div class="dt-content-wrapper">
+
+                            <!-- Site Content -->
+                            <div class="dt-content">
+                                <div class="dt-card">
+                                    <div class="dt-card__body">
+                                        @RenderBody()<!-- /grid -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /site content -->
+                            <!-- Footer -->
+                            <footer class="dt-footer">
+                                Copyright Edupool © 2019. Developed by <a href="http://www.infobrain.com.ng" target="_blank">InfoBrain Technologies</a>
+                            </footer>
+                            <!-- /footer -->
+                        </div>
+                        <!-- /site content wrapper -->
+                        <!-- Theme Chooser -->
+                        <div class="dt-customizer-toggle">
+                            <a href="javascript:void(0)" data-toggle="customizer"> <i class="icon icon-customizer animation-customizer"></i> </a>
+                        </div>
+                        <!-- /theme chooser -->
+                        <!-- Customizer Sidebar -->
+                        <aside class="dt-customizer dt-drawer position-right">
+                            <div class="dt-customizer__inner">
+
+                                <!-- Customizer Header -->
+                                <div class="dt-customizer__header">
+
+                                    <!-- Customizer Title -->
+                                    <div class="dt-customizer__title">
+                                        <h3 class="mb-0">Theme Settings</h3>
+                                    </div>
+                                    <!-- /customizer title -->
+                                    <!-- Close Button -->
+                                    <button type="button" class="close" data-toggle="customizer">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <!-- /close button -->
+
+                                </div>
+                                <!-- /customizer header -->
+                                <!-- Customizer Body -->
+                               
+                                <!-- /customizer body -->
+
+                            </div>
+                        </aside>
+                        <!-- /customizer sidebar -->
+                    </main>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("GlobalAdmin"))
+        {
+            <div class="dt-root">
+                <div class="dt-root__inner">
+                    <!-- Header -->
+                    <header class="dt-header">
+
+                        <!-- Header container -->
+                        <div class="dt-header__container">
+
+                            <!-- Brand -->
+                            <div class="dt-brand">
+
+                                <!-- Brand tool -->
+                                <div class="dt-brand__tool" data-toggle="main-sidebar">
+                                    <div class="hamburger-inner"></div>
+                                </div>
+                                <!-- /brand tool -->
+                                <!-- Brand logo -->
+                                <span class="dt-brand__logo">
+                                    <a class="dt-brand__logo-link" href="@Url.Action("AdminDashboard","Dashboard")">
+                                        <b style="color:white; font-size: 20px"> EAttendance</b>
+                                    </a>
+                                </span>
+                                <!-- /brand logo -->
+
+                            </div>
+                            <!-- /brand -->
+                            <!-- Header toolbar-->
+                            <div class="dt-header__toolbar">
+
+
+                                <!-- /search box -->
+                                <!-- Header Menu Wrapper -->
+                                <div class="dt-nav-wrapper">
+                                    <!-- Header Menu -->
+
+
+                                    <ul class="dt-nav">
+                                        <li class="dt-nav__item dropdown">
+
+                                            <!-- Dropdown Link -->
+                                            <a href="#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper"
+                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img class="dt-avatar" src="~/images/default.png">
+                                                <span class="dt-avatar-info d-none d-sm-block">
+                                                    <span class="dt-avatar-name">@User.Identity.Name</span>
+                                                </span>
+                                            </a>
+                                            <!-- /dropdown link -->
+                                            <!-- Dropdown Option -->
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <div class="dt-avatar-wrapper flex-nowrap p-6 mt-n2 bg-gradient-purple text-white rounded-top">
+                                                    <img class="dt-avatar" src="~/images/default.png">
+                                                    <span class="dt-avatar-info">
+                                                        <span class="dt-avatar-name">@User.Identity.Name</span>
+                                                        <span class="f-12">Global Admin</span>
+                                                    </span>
+                                                </div>
+                                                 
+                                                <a class="nav-link" asp-action="logout" asp-controller="Account">
+                                                    <i class="icon icon-editors icon-fw mr-2 mr-sm-1"></i>Logout
+                                                </a>
+
+                                            </div>
+                                            <!-- /dropdown option -->
+
+                                        </li>
+                                    </ul>
+                                    <!-- /header menu -->
+                                </div>
+                                <!-- Header Menu Wrapper -->
+
+                            </div>
+                            <!-- /header toolbar -->
+
+                        </div>
+                        <!-- /header container -->
+
+                    </header>
+                    <!-- /header -->
+                    <!-- Site Main -->
+                    <main class="dt-main">
+                        <!-- Sidebar -->
+                        <aside id="main-sidebar" class="dt-sidebar">
+                            <div class="dt-sidebar__container">
+
+                                <!-- Sidebar Navigation -->
+                                <ul class="dt-side-nav">
+
+                                    <!-- Menu Header -->
+                                    <li class="dt-side-nav__item dt-side-nav__header">
+                                        <span class="dt-side-nav__text">main</span>
+                                    </li>
+                                    <!-- /menu header -->
+                                    <!-- Menu Item -->
+                                    <li class="dt-side-nav__item open">
+                                        <a href="@Url.Action("AdminDashboard","Dashboard")" class="dt-side-nav__link dt-side-nav__arrow" title="Dashboard">
+                                            <i class="icon icon-dashboard icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Dashboard</span>
+                                        </a>
+
+                                        <!-- Sub-menu -->
+
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Create","Staffs")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Create Staff</span>
+                                        </a>
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Create","Students")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Create Student</span>
+                                        </a>
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Create","Courses")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Create Courses</span>
+                                        </a>
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Create","InstructorCourses")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">Assign Course</span>
+                                        </a>
+                                    </li>
+                                    <li class="dt-side-nav__item">
+                                        <a href="@Url.Action("Index","Attendance")" class="dt-side-nav__link" title="Classic">
+                                            <i class="icon icon-components icon-fw icon-lg"></i>
+                                            <span class="dt-side-nav__text">View Attendances</span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                                <!-- /sidebar navigation -->
+
+                            </div>
+                        </aside>
+                        <!-- /sidebar -->
+                        <!-- Site Content Wrapper -->
+                        <div class="dt-content-wrapper">
+
+                            <!-- Site Content -->
+                            <div class="dt-content">
+                                <div class="dt-card">
+                                    <div class="dt-card__body">
+                                        @RenderBody()<!-- /grid -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /site content -->
+                            <!-- Footer -->
+                            <footer class="dt-footer">
+                                Copyright Edupool © 2019. Developed by <a href="http://www.infobrain.com.ng" target="_blank">InfoBrain Technologies</a>
+                            </footer>
+                            <!-- /footer -->
+                        </div>
+                        <!-- /site content wrapper -->
+                        <!-- Theme Chooser -->
+                        <div class="dt-customizer-toggle">
+                            <a href="javascript:void(0)" data-toggle="customizer"> <i class="icon icon-customizer animation-customizer"></i> </a>
+                        </div>
+                        <!-- /theme chooser -->
+                        <!-- Customizer Sidebar -->
+                        <aside class="dt-customizer dt-drawer position-right">
+                            <div class="dt-customizer__inner">
+
+                                <!-- Customizer Header -->
+                                <div class="dt-customizer__header">
+
+                                    <!-- Customizer Title -->
+                                    <div class="dt-customizer__title">
+                                        <h3 class="mb-0">Theme Settings</h3>
+                                    </div>
+                                    <!-- /customizer title -->
+                                    <!-- Close Button -->
+                                    <button type="button" class="close" data-toggle="customizer">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <!-- /close button -->
+
+                                </div>
+                                <!-- /customizer header -->
+                                <!-- Customizer Body -->
+                              
+                                <!-- /customizer body -->
+
+                            </div>
+                        </aside>
+                        <!-- /customizer sidebar -->
+                    </main>
+                </div>
+            </div>
+        }
+     
+
+    }
+    <!-- /root -->
+    <!-- Optional JavaScript -->
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/moment/moment.js"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Perfect Scrollbar jQuery -->
+    <script src="~/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <!-- /perfect scrollbar jQuery -->
+    <!-- masonry script -->
+    <script src="~/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script src="~/node_modules/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="~/assets/js/functions.js"></script>
+    <script src="~/assets/js/customizer.js"></script>
+    <script src="~/node_modules/chart.js/dist/Chart.min.js"></script>
+
+    <!-- Resources -->
+    <script src="~/node_modules/ammap3/ammap/ammap.js"></script>
+    <script src="~/node_modules/ammap3/ammap/maps/js/continentsLow.js"></script>
+    <script src="~/node_modules/ammap3/ammap/themes/light.js"></script>
+    <script src="~/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script src="~/node_modules/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="~/assets/js/functions.js"></script>
+    <script src="~/assets/js/customizer.js"></script><!--Summernote Editor JQuery-->
+    <script src="~/node_modules/summernote/dist/summernote-bs4.js"></script>
+    <script src="~/assets/libs/summernote/summernote-bs4.min.js"></script>
+
+    <script src="~/node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="~/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/js/custom/data-table.js"></script>
+    <!-- init js -->
+    <script src="~/assets/js/pages/summernote.init.js"></script>
+    <script src="~/assets/js/custom/editor-summernote.js"></script>
+    <script src="~/node_modules/amcharts3/amcharts/amcharts.js"></script>
+    <script src="~/node_modules/amcharts3/amcharts/gauge.js"></script>
+    <script src="~/node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="~/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/js/Datatables.js"></script>
+    <script src="~/js/DatatablesButtons.js"></script>
+    <script src="~/js/DatatablesFlash.js"></script>
+    <script src="~/js/JsZip.js"></script>
+    <script src="~/js/Pdfmake.js"></script>
+    <script src="~/js/PDFMakeFonts.js"></script>
+    <script src="~/js/DataTablesHtml5.js"></script>
+    <script src="~/js/DatatableButtonPrint.js"></script>
+    <script src="~/assets/js/custom/charts/dashboard-default.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="~/assets/js/script.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#datatables').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'excel', 'pdf', 'csv', 'print'
+                ],
+
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search records",
+                }
+
+            });
+
+            table.buttons().container()
+                .insertAfter('#datatables' + '_length');
+
+
+            // Edit record
+            $('#datatables' + ' > thead > tr > th').addClass('btn btn-rose');
+            // $(table_id + ' > thead > tr > th').css('display', 'table-cell');
+            $('#datatables' + ' > thead > tr').css('display', 'table-row');
+            $('#datatables' + ' > thead').css('width', '100%');
+            $('#datatables').closest("div").css('overflow', 'auto');
+        });
+        $("#loader").fadeOut(2000);
+    </script>
+</body>
+
+<!-- Mirrored from drift.g-axon.work/html-bs4/default/dashboard-crm.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2019 23:37:47 GMT -->
+</html>
